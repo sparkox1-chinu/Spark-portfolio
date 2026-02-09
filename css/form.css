@@ -1,0 +1,163 @@
+/* Form Styling */
+
+#center {
+  margin-top: 25px;
+  align-items: center;
+  justify-content: center;
+  
+}
+.contact-form {
+  max-width: 500px;
+  margin: 30px auto;
+  padding: 20px;
+  background: none;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.contact-form .form-group {
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  color: #E8C6FF;
+  transition: color 0.3s;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #e5c1ff;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  transform: translateY(-0.4px);
+  box-shadow: 0 0 10px #000000;
+  background: #F9F0FF;
+  outline: none;
+  box-shadow: 0 0 5px rgba(74,144,226,0.3);
+}
+
+.contact-form input:hover {
+  border: 1px solid #D08DFF;
+  background: #F9F0FF;
+}
+
+.contact-form textarea:hover {
+  border: 1px solid #D08DFF;
+  background: #F9F0FF;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-form button {
+  padding: 10px 20px;
+  width: 100%;
+  background: #B44AFF;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:focus {
+  background: #D08DFF;
+}
+
+.contact-form button:hover {
+  background: #c06afc;
+}
+
+#statusMessage {
+  margin-top: 12px;
+  font-weight: bold;
+  display: none;
+}
+
+/* Shake animation */
+@keyframes shake {
+  0% { transform: translateX(0); }
+  20% { transform: translateX(-5px); }
+  40% { transform: translateX(5px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+  100% { transform: translateX(0); }
+}
+
+.shake {
+  animation: shake 0.4s;
+}
+
+.form-group label.shake {
+  color: red; /* only text color, no border */
+}
+
+/* Glow effect for invalid inputs */
+.invalid-glow {
+  box-shadow: 0 0 8px 2px rgba(255, 0, 0, 0.7);
+  transition: box-shadow 0.6s ease-out;
+}
+
+/* Shake entire form */
+.contact-form.shake {
+  animation: shake 0.5s;
+}
+
+/* Toast Notification */
+#errorPopup {
+  display: none; 
+  position: fixed; 
+  top: 30px;   
+  right: 10px;
+  background: rgba(255,255,255,0.95); 
+  border: 1px solid #F5C6CB; 
+  color: #721c24; 
+  padding: 12px 18px; 
+  border-radius: 6px; 
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  z-index: 9999; 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between;
+  min-width: 250px;
+  max-width: 350px;
+  pointer-events: auto;
+  opacity: 0;
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Bounce animation for toast */
+@keyframes bounceInRight {
+  0% { transform: translateX(300px); opacity: 0; }
+  60% { transform: translateX(-20px); opacity: 1; }
+  80% { transform: translateX(10px); }
+  100% { transform: translateX(0); opacity: 1; }
+}
+
+#errorPopup.show {
+  animation: bounceInRight 0.6s forwards;
+}
+
+/* Close button */
+#errorPopup span#closePopup {
+  cursor: pointer; 
+  font-weight: bold; 
+  font-size: 16px;
+  color: #721c24;
+}
