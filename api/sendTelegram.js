@@ -6,7 +6,7 @@ export default async function handler(req, res) {
   const { name, email, telegram, subject, message } = req.body;
 
   // ⚡ Add your Telegram bot token and chat ID here
-  const BOT_TOKEN = "7619898657:AAG_yUVJ0HP59aqpwJGnaWBG8Lb0UYPTqpM";
+  const BOT_TOKEN = "8356298818:AAGYXGb2d5ViticG5dubWsC3dKGSInVqdGs";
   const CHAT_ID = "8341610251";
 
   const text = `
